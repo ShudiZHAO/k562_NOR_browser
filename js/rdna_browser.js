@@ -41,7 +41,7 @@
     svSeg: '#111111',
     svLink: '#e31a1c',
     exprGray: '#cfd2d6',
-    meFill: 'rgba(74,127,181,0.5)',
+    meFill: '#3284bd',
     meLine: '#2f6ca8'
   };
 
