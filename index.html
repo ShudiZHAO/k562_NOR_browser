@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K562 rDNA genome browser — NOR1–NOR18</title>
+<link rel="stylesheet" href="css/browser.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="tb-left">
+    <h1>K562 rDNA genome browser</h1>
+    <p class="sub">NOR1–NOR18 · FASTA · GFF · SV · methylation · barcode · type · expression</p>
+  </div>
+  <div class="tb-right">
+    <label class="tb-field">Jump to
+      <select id="norSelect"></select>
+    </label>
+    <button id="btnFitAll" class="tb-btn" type="button">Fit all</button>
+    <button id="btnLegend" class="tb-btn" type="button">Legend ▴</button>
+  </div>
+</header>
+
+<div class="toggles">
+  <span class="tg-title">Tracks</span>
+  <label><input type="checkbox" data-group="unit" checked> Unit annotations</label>
+  <label><input type="checkbox" data-group="gff" checked> GFF</label>
+  <label><input type="checkbox" data-group="fasta" checked> FASTA</label>
+  <label><input type="checkbox" data-group="me" checked> Methylation</label>
+  <label><input type="checkbox" data-group="sv" checked> SV</label>
+  <span class="hint">Ctrl + wheel = zoom · drag = pan · double-click = reset</span>
+</div>
+
+<section id="legend" class="legend"></section>
+
+<main id="panels"></main>
+
+<footer class="foot">
+  Sources: <code>NOR_k562.fa</code> · <code>NOR_k562.gff</code> ·
+  <code>diff_changes.txt</code> (simplified SV structure, see
+  <code>simplify_variation_structure_merged_R.R</code>) ·
+  <code>stats_Me.bedgraph</code> · <code>unit_barcode.csv</code>.
+  Coordinates per panel are 0-based positions inside each NOR record.
+</footer>
+
+<script src="data/rdna_data.js"></script>
+<script src="js/rdna_browser.js"></script>
+</body>
+</html>
